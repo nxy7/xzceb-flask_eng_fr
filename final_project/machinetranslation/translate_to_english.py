@@ -1,16 +1,10 @@
-import unittest
+"""Translation module."""
+
 from deep_translator import MyMemoryTranslator
 
-def FrenchToEnglish(str: str) -> str:
-    retStr = MyMemoryTranslator(source='fr-FR', target='en-GB').translate(str)
-    return retStr
-
-class TestToEnglishTranslations(unittest.TestCase):
-    def test_assertEq(self):
-        self.assertEqual(FrenchToEnglish('pain').lower(), 'bread')
-        self.assertEqual(FrenchToEnglish('montagne').lower(), 'mountain')
-
-    def test_assertNotEq(self):
-        self.assertNotEqual(FrenchToEnglish('pain').lower(), 'pain')
-        self.assertNotEqual(FrenchToEnglish('former').lower(), 'former')
-    
+def french_to_english(translation_text) -> str:
+    """
+        Translates text from french to english
+    """
+    ret_str = MyMemoryTranslator(source='fr-FR', target='en-GB').translate(translation_text)
+    return ret_str

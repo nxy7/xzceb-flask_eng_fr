@@ -21,6 +21,7 @@
             python310Packages.jinja2
             python310Packages.python-lsp-server
             pipenv
+            pylint
           ];
         };
       });
