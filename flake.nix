@@ -16,8 +16,10 @@
       in {
         devShell = pkgs.mkShell {
           packages = with pkgs; [
-            python311
-            python311Packages.python-lsp-server
+            (python310.withPackages
+              (ps: with ps; [ jinja2 flask deep-translator ]))
+            python310Packages.jinja2
+            python310Packages.python-lsp-server
             pipenv
           ];
         };
